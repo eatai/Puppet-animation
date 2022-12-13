@@ -12,7 +12,7 @@ The animation depicts two human subjects performing a cooperative task. Each sub
 
 Linkages should be saved as .svg with the joint-to-joint vector drawn as a red line and the shape of the linkage in black. Below is the upper arm segment as an svg with the ends of the red line define the shoulder and elbow joints.
 
-![linkage svg](AgentPuppet/upperArm.svg)
+![linkage svg](AgentPuppet/upperArm.svg | width = 150)
 
 ###
 To install requirements, run the following from the command line:
