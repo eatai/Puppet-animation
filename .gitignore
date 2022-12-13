@@ -1,6 +1,7 @@
 # other ignores
 .DS_store
 *.code-workspace
+*.python-version
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
