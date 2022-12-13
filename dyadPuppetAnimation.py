@@ -5,6 +5,15 @@ import matplotlib.animation as animation
 from puppet import *
 import pickle
 
+from os.path import join, exists
+from os import mkdir
+
+
+
+media_path = 'Media'
+if not exists(media_path):
+    mkdir('Media')
+
 animation_filename_root = 'dyadCartoon'
 saveas_filetype = '.mp4'
 darkBGFlag = False
@@ -255,9 +264,15 @@ def update(k):
         print("Frame %d" %(k-1))
     return artistList
 
+# save still
+framegrab_num = 200
+update(framegrab_num)
+plt.savefig(join(media_path,'dyadCartoon.png'))
+
+# save animation
 anim = animation.FuncAnimation(fig, func=update, frames=duration*fps, interval = 25, blit=True, repeat=False, )
 writer = animation.FFMpegFileWriter(fps=40, bitrate=500)
-anim.save(animation_filename, writer=writer, dpi=300, savefig_kwargs={'facecolor': BGCOLOR})
+anim.save(join(media_path, animation_filename), writer=writer, dpi=300, savefig_kwargs={'facecolor': BGCOLOR})
 
 print("Finished")
 plt.show()
